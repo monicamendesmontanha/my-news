@@ -1,4 +1,26 @@
-import React from "react";
+import React, { Component }from "react";
+
+const Articles = props => (
+  <>
+    <h1>Articles</h1>
+    {props.this.state.articles.map(feed => {
+      return (
+        <FeedId feed={feed} />
+      );
+    })}
+  </>
+)
+
+const FeedId = props => (
+  <>
+    <h2>{props.feed.feedId}</h2>
+    <ul key={props.feed.feedId}>
+      {props.feed.items.map(item => {
+        return (<FeedItem item={item} />);
+      })}
+    </ul>
+  </>
+)
 
 const FeedItem = props => (
   <li key={props.item.title}>
@@ -7,7 +29,7 @@ const FeedItem = props => (
   </li>
 )
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -26,21 +48,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
-        <h1>Articles</h1>
-        {this.state.articles.map(feed => {
-          return (
-            <>
-              <h2>{feed.feedId}</h2>
-              <ul key={feed.feedId}>
-                {feed.items.map(item => {
-                  return (<FeedItem item={item} />);
-                })}
-              </ul>
-            </>
-          );
-        })}
-      </>
+      <Articles this={this}/>
     );
   }
 }

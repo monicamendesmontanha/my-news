@@ -1,33 +1,5 @@
-import React, { Component }from "react";
-
-const Articles = props => (
-  <>
-    <h1>Articles</h1>
-    {props.this.state.articles.map(feed => {
-      return (
-        <FeedId feed={feed} />
-      );
-    })}
-  </>
-)
-
-const FeedId = props => (
-  <>
-    <h2>{props.feed.feedId}</h2>
-    <ul key={props.feed.feedId}>
-      {props.feed.items.map(item => {
-        return (<FeedItem item={item} />);
-      })}
-    </ul>
-  </>
-)
-
-const FeedItem = props => (
-  <li key={props.item.title}>
-    <h3>{props.item.title}</h3>
-    <p>{props.item.summary}</p>
-  </li>
-)
+import React, { Component } from "react";
+import Articles from './Articles';
 
 class App extends Component {
   constructor() {

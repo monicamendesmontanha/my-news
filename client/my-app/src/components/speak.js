@@ -11,10 +11,11 @@ const speak = text => {
       console.log("SpeechSynthesisUtterance.onend");
     };
     utterThis.onerror = function(event) {
-      console.error("SpeechSynthesisUtterance.onerror");
+      console.error("SpeechSynthesisUtterance.onerror", event);
     };
 
-    utterThis.voice = synth.getVoices()[0];
+    utterThis.voice = synth.getVoices().find(v => v.name === "Karen");
+    console.log(utterThis.voice)
     utterThis.pitch = "1";
     utterThis.rate = "1";
     synth.speak(utterThis);

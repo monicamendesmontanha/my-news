@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Articles from "./Articles";
 import speak from "./speak";
+import Menu from "./Menu";
 
 
 class App extends Component {
@@ -23,7 +24,12 @@ class App extends Component {
   }
 
   render() {
-    return <Articles this={this} />;
+    return (
+      <>
+        <Menu />
+        <Articles this={this} />;
+      </>
+    )
   }
 }
 

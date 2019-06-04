@@ -1,34 +1,64 @@
 import React from "react";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHeadphones, faShare } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import speak from "./speak";
-
-
-library.add(
+import { Link } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
   faHeadphones,
-  faShare
-)
+  faShare,
+  faNewspaper
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import speak from "./speak";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton
+} from "react-share";
+import {
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  WhatsappIcon
+} from "react-share";
 
+library.add(faHeadphones, faShare, faNewspaper);
 
-function handleClick(item) {
-  speak(item.title)
-  speak(item.summary)
+function clickToSpeak(item) {
+  speak(item.title);
+  speak(item.summary);
 }
-
 
 const FeedItem = props => (
   <li key={props.item.title}>
-    <img alt={ props.alt } src={props.item.image}/>
-    <h3>{props.item.title}</h3>
-    <p>{props.item.summary}</p>
-    <p>{props.item.pubdate}</p>
-    <p>{props.item.link}</p>
-    <p>{props.item.description}</p>
+    <Link to={{ pathname: `/TextPage/${props.item}` }}>
+      <img alt={props.alt} src={props.item.image} />
+      <h3>{props.item.title}</h3>
+      <p>{props.item.summary}</p>
+      <p>{props.item.pubdate}</p>
+    </Link>
 
-    <FontAwesomeIcon onClick={() => handleClick(props.item)} icon={faHeadphones} />
-    <FontAwesomeIcon icon={faShare} />
+    <LinkedinShareButton url={props.item.link}>
+      <LinkedinIcon size={32} round={true} />
+    </LinkedinShareButton>
+    <TwitterShareButton url={props.item.link}>
+      <TwitterIcon size={32} round={true} />
+    </TwitterShareButton>
+    <WhatsappShareButton url={props.item.link}>
+      <WhatsappIcon size={32} round={true} />
+    </WhatsappShareButton>
+    <FacebookShareButton url={props.item.link}>
+      <FacebookIcon size={32} round={true} />
+    </FacebookShareButton>
+    <a href={props.item.link}>
+      <FontAwesomeIcon icon={faNewspaper} />
+    </a>
+    <button>
+      <FontAwesomeIcon
+        onClick={() => clickToSpeak(props.item)}
+        icon={faHeadphones}
+      />
+    </button>
   </li>
-)
+);
 
 export default FeedItem;

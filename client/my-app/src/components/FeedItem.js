@@ -30,8 +30,9 @@ function clickToSpeak(item) {
 }
 
 const FeedItem = props => (
-  <li key={props.item.title}>
-      <img alt={props.alt} src={props.item.image} />
+  <li key={props.item.guid}>
+			{/* TODO: SHOW IMAGE */}
+      {/* <img alt={props.alt} src={props.item.image} /> */}
       <h3>{props.item.title}</h3>
       <p>{props.item.summary}</p>
       <p>{props.item.pubdate}</p>

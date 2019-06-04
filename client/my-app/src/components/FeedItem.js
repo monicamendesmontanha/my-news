@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHeadphones,
@@ -32,12 +31,10 @@ function clickToSpeak(item) {
 
 const FeedItem = props => (
   <li key={props.item.title}>
-    <Link to={{ pathname: `/TextPage/${props.item}` }}>
       <img alt={props.alt} src={props.item.image} />
       <h3>{props.item.title}</h3>
       <p>{props.item.summary}</p>
       <p>{props.item.pubdate}</p>
-    </Link>
 
     <LinkedinShareButton url={props.item.link}>
       <LinkedinIcon size={32} round={true} />

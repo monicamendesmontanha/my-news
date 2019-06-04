@@ -21,6 +21,10 @@ app.get("/feed", (req, res) => {
     {
       id: "The Economist",
       url: "https://www.economist.com/finance-and-economics/rss.xml"
+    },
+    {
+      id: "BBC News - Technology",
+      url: "http://feeds.bbci.co.uk/news/technology/rss.xml"
     }
   ];
 

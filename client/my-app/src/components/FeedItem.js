@@ -12,13 +12,15 @@ import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-  WhatsappShareButton
+  WhatsappShareButton,
+  EmailShareButton
 } from "react-share";
 import {
   FacebookIcon,
   LinkedinIcon,
   TwitterIcon,
-  WhatsappIcon
+  WhatsappIcon,
+  EmailIcon
 } from "react-share";
 
 library.add(faHeadphones, faShare, faNewspaper);
@@ -49,6 +51,9 @@ const FeedItem = props => (
     <FacebookShareButton url={props.item.link}>
       <FacebookIcon size={32} round={true} />
     </FacebookShareButton>
+    <EmailShareButton url={props.item.link}>
+      <EmailIcon size={32} round={true} />
+    </EmailShareButton>
     <a href={props.item.link}>
       <FontAwesomeIcon icon={faNewspaper} />
     </a>

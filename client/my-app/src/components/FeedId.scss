@@ -1,12 +1,13 @@
 @import "../../config";
 
 h2 {
-  border: 2px solid rgb(15, 54, 226);
+  // border: 2px solid rgb(15, 54, 226);
+  color: $black;
 }
 
 
 .container {
-  border: 2px solid yellow;
+  // border: 2px solid yellow;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

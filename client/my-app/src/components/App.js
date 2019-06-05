@@ -27,12 +27,12 @@ class App extends Component {
   render() {
     return (
       <>
-        <div className="menu">
-          <Menu />
-        </div>
-        <body>
-          <Articles this={this} />;
-        </body>
+      <header className="menu" >
+        <Menu />
+      </header>
+      <main className="main">
+        <Articles this={this} />;
+      </main>
       </>
     )
   }

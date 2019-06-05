@@ -35,16 +35,13 @@ const FeedItem = props => (
     <li key={props.item.guid} className="item">
       {/* TODO: SHOW IMAGE */}
       {/* <img alt={props.alt} src={props.item.image} /> */}
-
-      <h3>
-        <button>
-          <FontAwesomeIcon
-            onClick={() => clickToSpeak(props.item)}
-            icon={faHeadphones}
-          />
-        </button>
-        {props.item.title}
-      </h3>
+      <button>
+        <FontAwesomeIcon
+          onClick={() => clickToSpeak(props.item)}
+          icon={faHeadphones}
+        />
+      </button>
+      <h3>{props.item.title}</h3>
       <p>
         {props.item.summary}
         <a href={props.item.link}>
@@ -55,19 +52,19 @@ const FeedItem = props => (
 
       <div className="share">
         <LinkedinShareButton url={props.item.link}>
-          <LinkedinIcon size={32} round={true} />
+          <LinkedinIcon size={25} borderRadius={10} />
         </LinkedinShareButton>
         <TwitterShareButton url={props.item.link}>
-          <TwitterIcon size={32} round={true} />
+          <TwitterIcon size={25} borderRadius={10} />
         </TwitterShareButton>
         <WhatsappShareButton url={props.item.link}>
-          <WhatsappIcon size={32} round={true} />
+          <WhatsappIcon size={25} borderRadius={10} />
         </WhatsappShareButton>
         <FacebookShareButton url={props.item.link}>
-          <FacebookIcon size={32} round={true} />
+          <FacebookIcon size={25} borderRadius={10} />
         </FacebookShareButton>
         <EmailShareButton url={props.item.link}>
-          <EmailIcon size={32} round={true} />
+          <EmailIcon size={25} borderRadius={10} />
         </EmailShareButton>
       </div>
     </li>

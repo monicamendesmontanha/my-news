@@ -1,3 +1,5 @@
+@import "../../config";
+
 .item {
   background-color: #1EAAFC;
   background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
@@ -14,7 +16,20 @@
   flex-direction: row;
 }
 
- {
 
+//mobile
+@include mediaSm {
+}
 
+@include mediaMd {
+}
+
+@include mediaLg {
+  .item {
+    width: 80%;
+    font-size: 10px;
+  }
+}
+
+@include mediaXl {
 }

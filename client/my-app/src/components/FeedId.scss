@@ -1,0 +1,40 @@
+@import "../../config";
+
+h2 {
+  border: 2px solid rgb(15, 54, 226);
+}
+
+
+.container {
+  border: 2px solid yellow;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(1, auto);
+  grid-gap: 1rem;
+}
+
+//mobile
+@include mediaSm {
+  .container {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@include mediaMd {
+  .container {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@include mediaLg {
+  .container {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@include mediaXl {
+}

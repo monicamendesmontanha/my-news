@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Articles from "./Articles";
 import speak from "./speak";
 import Menu from "./Menu";
-import "./App.css";
+import "./App.scss";
 
 
 class App extends Component {
@@ -26,14 +26,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <header>
+      <>
+        <div className="menu">
           <Menu />
-        </header>
+        </div>
         <body>
           <Articles this={this} />;
         </body>
-      </div>
+      </>
     )
   }
 }

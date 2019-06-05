@@ -1,0 +1,25 @@
+@import "../../config";
+
+.menu {
+  border: 0.5px solid rgb(226, 127, 15);
+  background-color: $white;
+  box-sizing: border-box;
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+body {
+  /* border: 2px solid rgb(255, 47, 255); */
+  background-color: #3b404e;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+}

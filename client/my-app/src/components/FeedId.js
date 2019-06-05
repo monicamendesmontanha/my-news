@@ -1,6 +1,6 @@
 import React from "react";
 import FeedItem from "./FeedItem";
-import './FeedId.css'
+import './FeedId.scss'
 
 const FeedId = props => (
   <div>

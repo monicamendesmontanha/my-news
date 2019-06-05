@@ -25,6 +25,10 @@ app.get("/feed", (req, res) => {
     {
       id: "BBC News - Technology",
       url: "http://feeds.bbci.co.uk/news/technology/rss.xml"
+    },
+    {
+      id: "New York Times",
+      url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
     }
   ];
 

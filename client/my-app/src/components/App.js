@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Articles from "./Articles";
 import speak from "./speak";
 import Menu from "./Menu";
+import "./App.css";
 
 
 class App extends Component {
@@ -25,10 +26,14 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <Menu />
-        <Articles this={this} />;
-      </>
+      <div className="wrapper">
+        <header>
+          <Menu />
+        </header>
+        <body>
+          <Articles this={this} />;
+        </body>
+      </div>
     )
   }
 }

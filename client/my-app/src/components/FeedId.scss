@@ -26,7 +26,7 @@ h2 {
 
 @include mediaMd {
   .container {
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(2, auto);
   }
 }
 

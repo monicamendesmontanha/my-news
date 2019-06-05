@@ -14,22 +14,22 @@ $red: #b11111;
 }
 
 @mixin mediaSm {
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 700px) {
     @content;
   }
 }
 @mixin mediaMd {
-  @media screen and (min-width: 751px)  and (max-width: 900px) {
+  @media screen and (min-width: 701px)  and (max-width: 900px) {
     @content;
   }
 }
 @mixin mediaLg {
-  @media screen and (min-width: 901px) and (max-width: 1170px) {
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
     @content;
   }
 }
 @mixin mediaXl {
-  @media screen and (min-width: 1171px) {
+  @media screen and (min-width: 1201px) {
     @content;
   }
 }

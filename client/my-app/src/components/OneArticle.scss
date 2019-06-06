@@ -4,10 +4,11 @@
 .article {
   border: 4px dashed $light-grey;
   width: 90%;
+  text-align: justify;
 }
 
 
-h3 {
+.title {
   text-align: center;
   font-size: 35px;
 }

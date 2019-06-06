@@ -29,9 +29,9 @@ const OneArticle = props => (
       />
     </button>
     <Share item={props.item}/>
-    <h3>{props.item.title}
+    <h3 className="title">{props.item.title}
     </h3>
-    <p>{props.item.pubdate}</p>
+    <div className="date">{props.item.pubdate}</div>
     <p>
       {props.item.summary}
     </p>

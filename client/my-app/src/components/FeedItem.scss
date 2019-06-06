@@ -15,12 +15,41 @@
   .date {
     text-align: left;
   }
-
 }
 
 h3 {
   font-size: 20px;
   font-family: 'Patrick Hand SC', cursive;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.speak {
+  position: absolute;
+  z-index: 1;
+  margin-top: 5px;
+  margin-left: 5px;
+
+  button {
+    border: 2px solid $dark-grey;
+    border-radius: 4px;
+    font-size: 22px;
+  }
+}
+
+.linkSite {
+  position: absolute;
+  z-index: 1;
+  margin-top: 45px;
+  margin-left: 5px;
+
+  a {
+  border: 2px solid $dark-grey;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 0.5px 7px 0.5px 7px;
+  color: $black;
+  }
 }
 
 

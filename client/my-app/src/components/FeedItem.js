@@ -19,12 +19,19 @@ const FeedItem = props => (
   <li key={props.item.guid} className="item">
     {/* TODO: SHOW IMAGE */}
     {/* <img alt={item.alt} src={item.image} /> */}
+    <div className="speak">
     <button>
       <FontAwesomeIcon
         onClick={() => clickToSpeak(props.item)}
         icon={faHeadphones}
       />
     </button>
+    </div>
+    <div className="linkSite">
+    <a href={props.item.link}>
+      <FontAwesomeIcon icon={faNewspaper} />
+    </a>
+    </div>
     <h3
       onClick={() => {
         props.handleReadMoreClick(props.item);
@@ -36,9 +43,6 @@ const FeedItem = props => (
       {props.item.summary}
     </p>
 
-    <a href={props.item.link}>
-      <FontAwesomeIcon icon={faNewspaper} />
-    </a>
     <p className="date">{props.item.pubdate}</p>
 
     <Share item={props.item}/>

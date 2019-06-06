@@ -31,7 +31,7 @@ class App extends Component {
         <Menu />
       </header>
       <main className="main">
-        <Articles this={this} />;
+        <Articles articles={this.state.articles} />
       </main>
       </>
     )

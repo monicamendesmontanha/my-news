@@ -5,7 +5,7 @@ import './Articles.scss'
 const Articles = props => (
   <div className="articles">
     <h1>Articles</h1>
-    {props.this.state.articles.map(feed => {
+    {props.articles.map(feed => {
       return (
         <FeedId key={feed.feedId} feed={feed} />
       );

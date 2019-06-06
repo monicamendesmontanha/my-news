@@ -3,7 +3,6 @@
 .menu {
   display: flex;
   flex-direction: row;
-  // border: 0.5px solid rgb(226, 127, 15);
   background-color: $dark-grey;
   color: $white;
   box-sizing: border-box;
@@ -16,6 +15,33 @@
   right: 0;
 }
 
+h1 {
+  margin-top: 15px;
+  margin-left: 30px;
+  font-family: 'New Rocker', cursive;
+  font-size: 40px;
+}
+
 .dropDown {
+  position: fixed;
+  top: 20px;
+  right: 30px;
   font-size: 30px;
+}
+
+//mobile
+@include mediaSm {
+  h1 {
+    font-size: 30px;
+  }
+
+}
+
+@include mediaMd {
+}
+
+@include mediaLg {
+}
+
+@include mediaXl {
 }

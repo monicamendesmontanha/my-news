@@ -17,9 +17,9 @@ const Menu = props => (
   <>
     <h1>My News</h1>
     {/* TO DO MODE DARK/LIGHT: */}
-    <FontAwesomeIcon icon={faSun} />
+    {/* <FontAwesomeIcon icon={faSun} /> */}
     {/* toogle */}
-    <FontAwesomeIcon icon={faMoon} />
+    {/* <FontAwesomeIcon icon={faMoon} /> */}
     {/* TO DO SELECT LANGUAGE */}
     <FontAwesomeIcon onClick={() => selectLanguage(props.item)} icon={faGlobe} className="dropDown" />
   </>

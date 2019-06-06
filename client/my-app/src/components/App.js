@@ -3,8 +3,8 @@ import Articles from "./Articles";
 import speak from "./speak";
 import Menu from "./Menu";
 import "./App.scss";
+import OneArticle from './OneArticle';
 
-const OneArticle = props => <p>{props.selectedItem.title}</p>;
 const BackButton = props => <button onClick={props.onClick}>Back</button>;
 
 class App extends Component {
@@ -49,7 +49,7 @@ class App extends Component {
           {this.state.readMore ? (
             <>
               <BackButton onClick={this.handleBackClick} />
-              <OneArticle selectedItem={this.state.selectedItem} />
+              <OneArticle item={this.state.selectedItem} />
             </>
           ) : (
             <Articles

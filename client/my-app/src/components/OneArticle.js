@@ -21,6 +21,8 @@ import {
   WhatsappIcon,
   EmailIcon
 } from "react-share";
+import "./OneArticle.scss";
+
 
 
 library.add(faHeadphones, faShare, faNewspaper);
@@ -30,7 +32,7 @@ function clickToSpeak(item) {
 }
 
 const OneArticle = props => (
-  <>
+  <div className="article">
     {/* TODO: SHOW IMAGE */}
     {/* <img alt={item.alt} src={item.image} /> */}
     <button>
@@ -39,18 +41,6 @@ const OneArticle = props => (
         icon={faHeadphones}
       />
     </button>
-    <h3>{props.item.title}
-    </h3>
-    <p>
-      {props.item.summary}
-      {/* {props.button} */}
-    </p>
-
-    <a href={props.item.link}>
-      <FontAwesomeIcon icon={faNewspaper} />
-    </a>
-    <p>{props.item.pubdate}</p>
-
     <div className="share">
       <LinkedinShareButton url={props.item.link}>
         <LinkedinIcon size={25} borderRadius={10} />
@@ -68,7 +58,18 @@ const OneArticle = props => (
         <EmailIcon size={25} borderRadius={10} />
       </EmailShareButton>
     </div>
-    </>
+    <h3>{props.item.title}
+    </h3>
+    <p>{props.item.pubdate}</p>
+    <p>
+      {props.item.summary}
+    </p>
+
+    <a href={props.item.link}>
+      <FontAwesomeIcon icon={faNewspaper} />
+    </a>
+
+  </div>
 );
 
 export default OneArticle;

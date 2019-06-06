@@ -1,0 +1,30 @@
+@import "../../config";
+
+
+.article {
+  background-color: $red;
+  // width: 80%;
+
+
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+}
+
+
+//mobile
+@include mediaSm {
+}
+
+@include mediaMd {
+}
+
+@include mediaLg {
+}
+
+@include mediaXl {
+}

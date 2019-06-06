@@ -22,6 +22,7 @@ import {
   EmailIcon
 } from "react-share";
 import "./OneArticle.scss";
+import Share from "./Share";
 
 
 
@@ -41,23 +42,7 @@ const OneArticle = props => (
         icon={faHeadphones}
       />
     </button>
-    <div className="share">
-      <LinkedinShareButton url={props.item.link}>
-        <LinkedinIcon size={25} borderRadius={10} />
-      </LinkedinShareButton>
-      <TwitterShareButton url={props.item.link}>
-        <TwitterIcon size={25} borderRadius={10} />
-      </TwitterShareButton>
-      <WhatsappShareButton url={props.item.link}>
-        <WhatsappIcon size={25} borderRadius={10} />
-      </WhatsappShareButton>
-      <FacebookShareButton url={props.item.link}>
-        <FacebookIcon size={25} borderRadius={10} />
-      </FacebookShareButton>
-      <EmailShareButton url={props.item.link}>
-        <EmailIcon size={25} borderRadius={10} />
-      </EmailShareButton>
-    </div>
+    <Share item={props.item}/>
     <h3>{props.item.title}
     </h3>
     <p>{props.item.pubdate}</p>

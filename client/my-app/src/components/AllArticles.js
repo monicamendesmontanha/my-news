@@ -1,13 +1,13 @@
 import React from "react";
-import ContainerNews from "./ContainerNews";
+import NewsContainer from "./NewsContainer";
 
 const AllArticles = props => (
   <div className="articles">
     <h1>Articles</h1>
     {props.articles.map(feed => {
       return (
-        <ContainerNews
-          key={feed.ContainerNews}
+        <NewsContainer
+          key={feed.NewsContainer}
           feed={feed}
           handleReadMoreClick={props.handleReadMoreClick}
         />

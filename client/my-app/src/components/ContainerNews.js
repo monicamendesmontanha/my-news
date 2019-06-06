@@ -1,8 +1,8 @@
 import React from "react";
 import FeedItem from "./FeedItem";
-import "./FeedId.scss";
+import "./ContainerNews.scss";
 
-const FeedId = props => (
+const ContainerNews = props => (
   <>
     <h2>{props.feed.feedId}</h2>
     <ul key={props.feed.feedId} className="container">
@@ -19,4 +19,4 @@ const FeedId = props => (
   </>
 );
 
-export default FeedId;
+export default ContainerNews;

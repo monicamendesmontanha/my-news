@@ -3,6 +3,7 @@ import AllArticles from "./AllArticles";
 import speak from "./speak";
 import Menu from "./Menu";
 import "./App.scss";
+import "./Menu.scss";
 import OneArticle from './OneArticle';
 
 const BackButton = props => <button onClick={props.onClick}>Back</button>;

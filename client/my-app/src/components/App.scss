@@ -1,18 +1,5 @@
 @import "../../config";
 
-.menu {
-  // border: 0.5px solid rgb(226, 127, 15);
-  background-color: $dark-grey;
-  box-sizing: border-box;
-  border-bottom: 4px solid $black;
-  height: 80px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
 .main {
   // border: 2px solid rgb(255, 47, 255);
   display: flex;

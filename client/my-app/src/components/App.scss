@@ -7,7 +7,7 @@
   border-bottom: 4px solid $black;
   height: 80px;
   width: 100%;
-  // position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -21,4 +21,5 @@
   align-items: center;
   font-family: 'Roboto', sans-serif;
   padding: 10px;
+  margin-top: 80px;
 }

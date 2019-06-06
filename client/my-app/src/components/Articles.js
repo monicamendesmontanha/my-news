@@ -1,6 +1,5 @@
 import React from "react";
 import FeedId from "./FeedId";
-import "./Articles.scss";
 
 const Articles = props => (
   <div className="articles">

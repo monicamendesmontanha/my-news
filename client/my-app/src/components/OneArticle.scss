@@ -2,17 +2,14 @@
 
 
 .article {
-  background-color: $red;
-  // width: 80%;
-
-
+  border: 4px dashed $light-grey;
+  width: 90%;
 }
 
 .share {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-
 }
 
 

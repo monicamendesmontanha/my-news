@@ -4,13 +4,20 @@ import speak from "./speak";
 import Menu from "./Menu";
 import "./App.scss";
 
+const OneArticle = props => <p>{props.selectedItem.title}</p>;
+const BackButton = props => <button onClick={props.onClick}>Back</button>;
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      articles: []
+      articles: [],
+      readMore: false,
+      selectedItem: null
     };
+
+    this.handleReadMoreClick = this.handleReadMoreClick.bind(this);
+    this.handleBackClick = this.handleBackClick.bind(this);
   }
 
   async componentDidMount() {
@@ -24,17 +31,35 @@ class App extends Component {
     speak("Content loaded!");
   }
 
+  handleReadMoreClick(item) {
+    this.setState({ readMore: true, selectedItem: item });
+  }
+
+  handleBackClick() {
+    this.setState({ readMore: false, selectedItem: null });
+  }
+
   render() {
     return (
       <>
-      <header className="menu" >
-        <Menu />
-      </header>
-      <main className="main">
-        <Articles articles={this.state.articles} />
-      </main>
+        <header className="menu">
+          <Menu />
+        </header>
+        <main className="main">
+          {this.state.readMore ? (
+            <>
+              <BackButton onClick={this.handleBackClick} />
+              <OneArticle selectedItem={this.state.selectedItem} />
+            </>
+          ) : (
+            <Articles
+              articles={this.state.articles}
+              handleReadMoreClick={this.handleReadMoreClick}
+            />
+          )}
+        </main>
       </>
-    )
+    );
   }
 }
 

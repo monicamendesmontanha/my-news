@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHeadphones,
@@ -29,52 +29,51 @@ function clickToSpeak(item) {
   speak(`${item.title} ${item.summary}`);
 }
 
-class FeedItem extends Component {
+const FeedItem = props => (
+  <li key={props.item.guid} className="item">
+    {/* TODO: SHOW IMAGE */}
+    {/* <img alt={item.alt} src={item.image} /> */}
+    <button>
+      <FontAwesomeIcon
+        onClick={() => clickToSpeak(props.item)}
+        icon={faHeadphones}
+      />
+    </button>
+    <h3
+      onClick={() => {
+        props.handleReadMoreClick(props.item);
+      }}
+    >
+      {props.item.title}
+    </h3>
+    <p>
+      {props.item.summary}
+      {/* {props.button} */}
+    </p>
 
-  render() {
-		const item = this.props.item;
+    <a href={props.item.link}>
+      <FontAwesomeIcon icon={faNewspaper} />
+    </a>
+    <p>{props.item.pubdate}</p>
 
-    return (
-      <div>
-        <li key={item.guid} className="item">
-          {/* TODO: SHOW IMAGE */}
-          {/* <img alt={item.alt} src={item.image} /> */}
-          <button>
-            <FontAwesomeIcon
-              onClick={() => clickToSpeak(item)}
-              icon={faHeadphones}
-            />
-          </button>
-          <h3>{item.title}</h3>
-          <p>
-            {item.summary}
-            <a href={item.link}>
-              <FontAwesomeIcon icon={faNewspaper} />
-            </a>
-          </p>
-          <p>{item.pubdate}</p>
-
-          <div className="share">
-            <LinkedinShareButton url={item.link}>
-              <LinkedinIcon size={25} borderRadius={10} />
-            </LinkedinShareButton>
-            <TwitterShareButton url={item.link}>
-              <TwitterIcon size={25} borderRadius={10} />
-            </TwitterShareButton>
-            <WhatsappShareButton url={item.link}>
-              <WhatsappIcon size={25} borderRadius={10} />
-            </WhatsappShareButton>
-            <FacebookShareButton url={item.link}>
-              <FacebookIcon size={25} borderRadius={10} />
-            </FacebookShareButton>
-            <EmailShareButton url={item.link}>
-              <EmailIcon size={25} borderRadius={10} />
-            </EmailShareButton>
-          </div>
-        </li>
-      </div>
-    );
-  }
-}
+    <div className="share">
+      <LinkedinShareButton url={props.item.link}>
+        <LinkedinIcon size={25} borderRadius={10} />
+      </LinkedinShareButton>
+      <TwitterShareButton url={props.item.link}>
+        <TwitterIcon size={25} borderRadius={10} />
+      </TwitterShareButton>
+      <WhatsappShareButton url={props.item.link}>
+        <WhatsappIcon size={25} borderRadius={10} />
+      </WhatsappShareButton>
+      <FacebookShareButton url={props.item.link}>
+        <FacebookIcon size={25} borderRadius={10} />
+      </FacebookShareButton>
+      <EmailShareButton url={props.item.link}>
+        <EmailIcon size={25} borderRadius={10} />
+      </EmailShareButton>
+    </div>
+  </li>
+);
 
 export default FeedItem;

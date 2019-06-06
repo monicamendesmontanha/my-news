@@ -18,19 +18,19 @@ import "./Share.scss";
 const Share = props => (
     <div className="share">
       <LinkedinShareButton url={props.item.link}>
-        <LinkedinIcon size={25} borderRadius={10} />
+        <LinkedinIcon className="shareIcon" size={28} iconBgStyle={{fill:"black"}} logoFillColor={'white'}/>
       </LinkedinShareButton>
       <TwitterShareButton url={props.item.link}>
-        <TwitterIcon size={25} borderRadius={10} />
+        <TwitterIcon className="shareIcon" size={28} iconBgStyle={{fill:"black"}} logoFillColor={'white'}/>
       </TwitterShareButton>
       <WhatsappShareButton url={props.item.link}>
-        <WhatsappIcon size={25} borderRadius={10} />
+    <WhatsappIcon className="shareIcon" size={28} iconBgStyle={{fill:"black"}} logoFillColor={'white'} />
       </WhatsappShareButton>
       <FacebookShareButton url={props.item.link}>
-        <FacebookIcon size={25} borderRadius={10} />
+        <FacebookIcon className="shareIcon" size={28} iconBgStyle={{fill:"black"}} logoFillColor={'white'}/>
       </FacebookShareButton>
       <EmailShareButton url={props.item.link}>
-        <EmailIcon size={25} borderRadius={10} />
+        <EmailIcon className="shareIcon" size={28} iconBgStyle={{fill:"black"}} logoFillColor={'white'}/>
       </EmailShareButton>
     </div>
 );

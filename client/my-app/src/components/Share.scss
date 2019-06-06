@@ -1,5 +1,13 @@
+@import "../../config";
+
 .share {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+.shareIcon {
+  box-sizing: border-box;
+  border: 1px solid $light-grey;
+  border-radius: 4px;
 }

@@ -7,11 +7,22 @@
 }
 
 
+h3 {
+  text-align: center;
+  font-size: 35px;
+}
+
 //mobile
 @include mediaSm {
+  h3 {
+    font-size: 25px;
+  }
 }
 
 @include mediaMd {
+  h3 {
+    font-size: 30px;
+  }
 }
 
 @include mediaLg {

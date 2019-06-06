@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Articles from "./Articles";
+import AllArticles from "./AllArticles";
 import speak from "./speak";
 import Menu from "./Menu";
 import "./App.scss";
@@ -52,7 +52,7 @@ class App extends Component {
               <OneArticle item={this.state.selectedItem} />
             </>
           ) : (
-            <Articles
+            <AllArticles
               articles={this.state.articles}
               handleReadMoreClick={this.handleReadMoreClick}
             />

@@ -1,7 +1,7 @@
 import React from "react";
 import FeedId from "./FeedId";
 
-const Articles = props => (
+const AllArticles = props => (
   <div className="articles">
     <h1>Articles</h1>
     {props.articles.map(feed => {
@@ -16,4 +16,4 @@ const Articles = props => (
   </div>
 );
 
-export default Articles;
+export default AllArticles;

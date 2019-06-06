@@ -39,7 +39,7 @@ const FeedItem = props => (
     <a href={props.item.link}>
       <FontAwesomeIcon icon={faNewspaper} />
     </a>
-    <p>{props.item.pubdate}</p>
+    <p className="date">{props.item.pubdate}</p>
 
     <Share item={props.item}/>
   </li>

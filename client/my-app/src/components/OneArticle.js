@@ -31,7 +31,7 @@ const OneArticle = props => (
     <Share item={props.item}/>
     <h3 className="title">{props.item.title}
     </h3>
-    <div className="date">{props.item.pubdate}</div>
+    <div>{props.item.pubdate}</div>
     <p>
       {props.item.summary}
     </p>

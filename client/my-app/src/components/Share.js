@@ -18,19 +18,19 @@ import "./Share.scss";
 const Share = props => (
     <div className="share">
       <LinkedinShareButton url={props.item.link}>
-        <LinkedinIcon className="shareIcon" size={28} iconBgStyle={{fill:"#333333"}} logoFillColor={'white'}/>
+        <LinkedinIcon className="shareIcon" size={28} iconBgStyle={{fill:"white"}} logoFillColor={'#333333'}/>
       </LinkedinShareButton>
       <TwitterShareButton url={props.item.link}>
-        <TwitterIcon className="shareIcon" size={28} iconBgStyle={{fill:"#333333"}} logoFillColor={'white'}/>
+        <TwitterIcon className="shareIcon" size={28} iconBgStyle={{fill:"white"}} logoFillColor={'#333333'}/>
       </TwitterShareButton>
       <WhatsappShareButton url={props.item.link}>
-    <WhatsappIcon className="shareIcon" size={28} iconBgStyle={{fill:"#333333"}} logoFillColor={'white'} />
+    <WhatsappIcon className="shareIcon" size={28} iconBgStyle={{fill:"white"}} logoFillColor={'#333333'} />
       </WhatsappShareButton>
       <FacebookShareButton url={props.item.link}>
-        <FacebookIcon className="shareIcon" size={28} iconBgStyle={{fill:"#333333"}} logoFillColor={'white'}/>
+        <FacebookIcon className="shareIcon" size={28} iconBgStyle={{fill:"white"}} logoFillColor={'#333333'}/>
       </FacebookShareButton>
       <EmailShareButton url={props.item.link}>
-        <EmailIcon className="shareIcon" size={28} iconBgStyle={{fill:"#333333"}} logoFillColor={'white'}/>
+        <EmailIcon className="shareIcon" size={28} iconBgStyle={{fill:"white"}} logoFillColor={'#333333'}/>
       </EmailShareButton>
     </div>
 );

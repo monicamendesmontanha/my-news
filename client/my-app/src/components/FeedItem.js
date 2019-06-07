@@ -14,33 +14,43 @@ function clickToSpeak(item) {
 }
 
 const FeedItem = props => (
-  <li key={props.item.guid} className="item">
-    {/* TODO: SHOW IMAGE */}
-    {/* <img alt={item.alt} src={item.image} /> */}
-    <div className="speak">
-      <button>
-        <FontAwesomeIcon
-          onClick={() => clickToSpeak(props.item)}
-          icon={faHeadphones}
-        />
-      </button>
-    </div>
-    <div className="linkSite">
-      <a href={props.item.link}>
-        <FontAwesomeIcon icon={faNewspaper} />
-      </a>
-    </div>
-    <h3
-      onClick={() => {
-        props.handleReadMoreClick(props.item);
-      }}
-    >
-      {props.item.title}
-    </h3>
-    <p>{props.item.summary}</p>
-    <div className="date"><Moment fromNow>{props.item.pubdate}</Moment></div>
-    <Share item={props.item} />
-  </li>
+  <div>
+    <li key={props.item.guid} className="item">
+      {/* TODO: SHOW IMAGE */}
+      {/* <img alt={item.alt} src={item.image} /> */}
+      <div className="speak">
+        <button>
+          <FontAwesomeIcon
+            onClick={() => clickToSpeak(props.item)}
+            icon={faHeadphones}
+          />
+        </button>
+      </div>
+      <div className="linkSite">
+        <a href={props.item.link}>
+          <FontAwesomeIcon icon={faNewspaper} />
+        </a>
+      </div>
+      <div>
+        <h3
+          onClick={() => {
+            props.handleReadMoreClick(props.item);
+          }}
+        >
+          {props.item.title}
+        </h3>
+      </div>
+      <div>
+        <p>{props.item.summary}</p>
+      </div>
+      <div className="footerItem">
+        <Moment className="date" fromNow>
+          {props.item.pubdate}
+        </Moment>
+        <Share item={props.item} />
+      </div>
+    </li>
+  </div>
 );
 
 export default FeedItem;

@@ -38,7 +38,7 @@ const FeedItem = props => (
       {props.item.title}
     </h3>
     <p>{props.item.summary}</p>
-    <Moment fromNow>{props.item.pubdate}</Moment>
+    <div className="date"><Moment fromNow>{props.item.pubdate}</Moment></div>
     <Share item={props.item} />
   </li>
 );

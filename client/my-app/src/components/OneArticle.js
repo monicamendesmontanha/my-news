@@ -9,8 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import speak from "./speak";
 import "./OneArticle.scss";
 import Share from "./Share";
-
-
+import Moment from "react-moment";
 
 library.add(faHeadphones, faShare, faNewspaper);
 
@@ -31,7 +30,9 @@ const OneArticle = props => (
     <Share item={props.item}/>
     <h3 className="title">{props.item.title}
     </h3>
-    <div>{props.item.pubdate}</div>
+    <div><Moment format="D MMM YYYY" withTitle>
+            {props.item.pubdate}
+          </Moment></div>
     <p>
       {props.item.summary}
     </p>

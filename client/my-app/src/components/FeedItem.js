@@ -1,13 +1,11 @@
 import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faHeadphones,
-  faNewspaper
-} from "@fortawesome/free-solid-svg-icons";
+import { faHeadphones, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import speak from "./speak";
 import "./FeedItem.scss";
 import Share from "./Share";
+import Moment from "react-moment";
 
 library.add(faHeadphones, faNewspaper);
 
@@ -20,17 +18,17 @@ const FeedItem = props => (
     {/* TODO: SHOW IMAGE */}
     {/* <img alt={item.alt} src={item.image} /> */}
     <div className="speak">
-    <button>
-      <FontAwesomeIcon
-        onClick={() => clickToSpeak(props.item)}
-        icon={faHeadphones}
-      />
-    </button>
+      <button>
+        <FontAwesomeIcon
+          onClick={() => clickToSpeak(props.item)}
+          icon={faHeadphones}
+        />
+      </button>
     </div>
     <div className="linkSite">
-    <a href={props.item.link}>
-      <FontAwesomeIcon icon={faNewspaper} />
-    </a>
+      <a href={props.item.link}>
+        <FontAwesomeIcon icon={faNewspaper} />
+      </a>
     </div>
     <h3
       onClick={() => {
@@ -39,13 +37,9 @@ const FeedItem = props => (
     >
       {props.item.title}
     </h3>
-    <p>
-      {props.item.summary}
-    </p>
-
-    <p className="date">{props.item.pubdate}</p>
-
-    <Share item={props.item}/>
+    <p>{props.item.summary}</p>
+    <Moment fromNow>{props.item.pubdate}</Moment>
+    <Share item={props.item} />
   </li>
 );
 

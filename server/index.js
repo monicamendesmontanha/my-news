@@ -4,7 +4,7 @@ const port = 8000;
 const feedparser = require("feedparser-promised");
 const cors = require("cors");
 
-const MAX_FEEDS = 5;
+const MAX_FEEDS = 8;
 
 app.use(cors());
 

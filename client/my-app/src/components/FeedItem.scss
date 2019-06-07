@@ -14,6 +14,9 @@
 
   .date {
     text-align: left;
+    margin-left: 30px;
+    font-family: "Patrick Hand SC", cursive;
+    color: $red;
   }
 }
 
@@ -22,6 +25,7 @@ h3 {
   font-family: "Patrick Hand SC", cursive;
   margin-left: 50px;
   margin-top: 5px;
+  color: $red;
 }
 
 .speak {

@@ -8,10 +8,6 @@ const MAX_FEEDS = 8;
 
 app.use(cors());
 
-// const url = "https://www.smh.com.au/rss/feed.xml";
-
-// app.get("/", (req, res) => res.send("Hello World!"));
-
 app.get("/feed", (req, res) => {
   const feeds = [
     {
@@ -39,13 +35,19 @@ app.get("/feed", (req, res) => {
       const feedId = feeds[index].id;
 
       return {
-        feedId,
+        feedId: feedId,
         items: items.slice(0, MAX_FEEDS)
       };
     });
 
     res.json(feedsByCategory);
   });
+});
+
+app.get("/feed/article", (req, res) => {
+  const url = req.query.url
+
+  res.json({ url: url, content: "bla" });
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

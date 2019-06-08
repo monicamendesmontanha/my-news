@@ -13,15 +13,15 @@ import Moment from "react-moment";
 
 library.add(faHeadphones, faShare, faNewspaper);
 
-function clickToSpeak(item) {
-  speak(`${item.title} ${item.summary}`);
+function clickToSpeak(item, singleArticle) {
+  speak(`${item.title} ${item.summary} ${singleArticle.content}`);
 }
 
 const OneArticle = props => (
   <div className="article">
     <button>
       <FontAwesomeIcon
-        onClick={() => clickToSpeak(props.item)}
+        onClick={() => clickToSpeak(props.item, props.singleArticle)}
         icon={faHeadphones}
       />
     </button>

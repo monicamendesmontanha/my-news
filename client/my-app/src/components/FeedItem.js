@@ -38,14 +38,16 @@ const FeedItem = props => (
           {props.item.title}
         </h3>
       </div>
-      <div>
+      <div className="summaryItem">
         <p> { props.item.summary }</p>
       </div>
       <div className="footerItem">
         <Moment className="date" fromNow>
           {props.item.pubdate}
         </Moment>
-        <Share item={props.item} />
+        <div className="share">
+          <Share item={props.item} />
+        </div>
       </div>
     </li>
   </div>

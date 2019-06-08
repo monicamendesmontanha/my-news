@@ -27,7 +27,7 @@ const FeedItem = props => (
         </button>
       </div>
       <div className="linkSite">
-        <a href={props.item.link}>
+        <a href={props.item.link} rel='noreferrer noopener' target="_blank">
           <FontAwesomeIcon icon={faNewspaper} />
         </a>
       </div>

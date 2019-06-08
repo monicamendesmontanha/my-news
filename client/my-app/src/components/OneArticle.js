@@ -19,8 +19,6 @@ function clickToSpeak(item) {
 
 const OneArticle = props => (
   <div className="article">
-    {/* TODO: SHOW IMAGE */}
-    {/* <img alt={item.alt} src={item.image} /> */}
     <button>
       <FontAwesomeIcon
         onClick={() => clickToSpeak(props.item)}
@@ -36,11 +34,7 @@ const OneArticle = props => (
     <p>
       {props.item.summary}
     </p>
-
-    <p>
-      {props.singleArticle.content}
-    </p>
-
+    <p>{ props.singleArticle.content }</p>
     <a href={props.item.link}>
       <FontAwesomeIcon icon={faNewspaper} />
     </a>

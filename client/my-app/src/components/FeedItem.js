@@ -34,14 +34,14 @@ const FeedItem = props => (
       <div>
         <h3
           onClick={() => {
-            props.handleReadMoreClick(props.item);
+            props.handleReadMoreClick(props.item, props.feedId);
           }}
         >
           {props.item.title}
         </h3>
       </div>
       <div>
-        <p>{props.item.summary}</p>
+        <p> { props.item.summary }</p>
       </div>
       <div className="footerItem">
         <Moment className="date" fromNow>

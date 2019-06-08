@@ -11,6 +11,7 @@ const NewsContainer = props => (
           <FeedItem
             key={item.title}
             item={item}
+            feedId={props.feed.feedId}
             handleReadMoreClick={props.handleReadMoreClick}
           />
         );

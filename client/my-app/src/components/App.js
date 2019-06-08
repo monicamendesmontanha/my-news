@@ -33,11 +33,11 @@ class App extends Component {
     speak("Content loaded!");
   }
 
-  handleReadMoreClick(item) {
+  handleReadMoreClick(item, feedId) {
     const self = this;
     const url = item.link;
 
-    fetch(`http://localhost:8000/feed/article?url="${url}"`)
+    fetch(`http://localhost:8000/feed/article/?url=${url}&feedId=${feedId}`)
       .then(response => response.json())
       .then(singleArticle => {
         self.setState({

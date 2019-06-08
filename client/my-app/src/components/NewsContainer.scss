@@ -1,23 +1,19 @@
 @import "../../config";
 
 h2 {
-  // border: 2px solid rgb(15, 54, 226);
   border-top: 4px solid $white;
   color: $black;
   font-family: 'Bungee Inline', cursive;
-  // font-family: 'Fredericka the Great', cursive;
   font-size: 20px;
   width: 95%;
   margin: 0 auto;
   margin-top: 20px;
   padding-top: 10px;
   padding-bottom: 20px;
-  // box-sizing: border-box;
 }
 
 
 .container {
-  // border: 2px solid yellow;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;

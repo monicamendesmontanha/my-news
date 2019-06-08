@@ -1,17 +1,13 @@
 import React from "react";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGlobe, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 library.add(
   faGlobe,
   faSun,
   faMoon
 )
-
-function selectLanguage(item) {
-
-}
 
 const Menu = props => (
   <>
@@ -21,7 +17,7 @@ const Menu = props => (
     {/* toogle */}
     {/* <FontAwesomeIcon icon={faMoon} /> */}
     {/* TO DO SELECT LANGUAGE */}
-    <FontAwesomeIcon onClick={() => selectLanguage(props.item)} icon={faGlobe} className="dropDown" />
+    {/* <FontAwesomeIcon onClick={() => selectLanguage(props.item)} icon={faGlobe} className="dropDown" /> */}
   </>
 )
 

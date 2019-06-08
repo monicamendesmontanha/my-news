@@ -37,6 +37,10 @@ const OneArticle = props => (
       {props.item.summary}
     </p>
 
+    <p>
+      {props.singleArticle.content}
+    </p>
+
     <a href={props.item.link}>
       <FontAwesomeIcon icon={faNewspaper} />
     </a>

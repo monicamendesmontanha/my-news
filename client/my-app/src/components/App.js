@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       articles: [],
       readMore: false,
-      selectedItem: null
+      selectedItem: null,
+      singleArticle: null
     };
 
     this.handleReadMoreClick = this.handleReadMoreClick.bind(this);
@@ -33,11 +34,22 @@ class App extends Component {
   }
 
   handleReadMoreClick(item) {
-    this.setState({ readMore: true, selectedItem: item });
+    const self = this;
+    const url = item.link;
+
+    fetch(`http://localhost:8000/feed/article?url="${url}"`)
+      .then(response => response.json())
+      .then(singleArticle => {
+        self.setState({
+          readMore: true,
+          selectedItem: item,
+          singleArticle: singleArticle
+        });
+      }).catch(error => console.log("parsing failed", error));
   }
 
   handleBackClick() {
-    this.setState({ readMore: false, selectedItem: null });
+    this.setState({ readMore: false, selectedItem: null, singleArticle: null });
   }
 
   render() {
@@ -50,7 +62,10 @@ class App extends Component {
           {this.state.readMore ? (
             <>
               <BackButton onClick={this.handleBackClick} />
-              <OneArticle item={this.state.selectedItem} />
+              <OneArticle
+                item={this.state.selectedItem}
+                singleArticle={this.state.singleArticle}
+              />
             </>
           ) : (
             <AllArticles

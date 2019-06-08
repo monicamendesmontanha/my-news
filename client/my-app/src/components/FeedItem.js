@@ -16,8 +16,6 @@ function clickToSpeak(item) {
 const FeedItem = props => (
   <div>
     <li key={props.item.guid} className="item">
-      {/* TODO: SHOW IMAGE */}
-      {/* <img alt={item.alt} src={item.image} /> */}
       <div className="speak">
         <button>
           <FontAwesomeIcon

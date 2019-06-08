@@ -35,7 +35,7 @@ const OneArticle = props => (
       {props.item.summary}
     </p>
     <p>{ props.singleArticle.content }</p>
-    <a href={props.item.link}>
+    <a href={props.item.link} rel='noreferrer noopener' target="_blank">
       <FontAwesomeIcon icon={faNewspaper} />
     </a>
 

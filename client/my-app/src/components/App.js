@@ -6,8 +6,6 @@ import "./App.scss";
 import "./Menu.scss";
 import OneArticle from './OneArticle';
 
-const BackButton = props => <button onClick={props.onClick}>Back</button>;
-
 class App extends Component {
   constructor() {
     super();
@@ -61,10 +59,10 @@ class App extends Component {
         <main className="main">
           {this.state.readMore ? (
             <>
-              <BackButton onClick={this.handleBackClick} />
               <OneArticle
                 item={this.state.selectedItem}
                 singleArticle={this.state.singleArticle}
+                handleBackClick={this.handleBackClick}
               />
             </>
           ) : (

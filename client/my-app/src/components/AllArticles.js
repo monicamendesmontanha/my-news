@@ -6,7 +6,7 @@ const AllArticles = props => (
     {props.articles.map(feed => {
       return (
         <NewsContainer
-          key={feed.NewsContainer}
+          key={feed.feedId}
           feed={feed}
           handleReadMoreClick={props.handleReadMoreClick}
         />

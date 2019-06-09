@@ -13,7 +13,13 @@ import "./OneArticle.scss";
 import Share from "./Share";
 import Moment from "react-moment";
 
-library.add(faHeadphones, faArrowAltCircleLeft, faPauseCircle, faPlayCircle, faStopCircle);
+library.add(
+  faHeadphones,
+  faArrowAltCircleLeft,
+  faPauseCircle,
+  faPlayCircle,
+  faStopCircle
+);
 const synth = window.speechSynthesis;
 
 const PlayButton = ({ item, singleArticle, toggleSpeaking }) => (
@@ -63,7 +69,13 @@ class OneArticle extends Component {
     return (
       <>
         <div className="navArticle">
-          <button className="backButton" onClick={this.props.handleBackClick}>
+          <button
+            className="backButton"
+            onClick={() => {
+              this.props.handleBackClick();
+              synth.cancel();
+            }}
+          >
             <FontAwesomeIcon icon={faArrowAltCircleLeft} />
           </button>
 

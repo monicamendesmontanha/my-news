@@ -1,8 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHeadphones,
-  faArrowAltCircleLeft
+  faArrowAltCircleLeft,
+  faPauseCircle,
+  faPlayCircle,
+  faStopCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import speak from "./speak";
@@ -10,45 +13,114 @@ import "./OneArticle.scss";
 import Share from "./Share";
 import Moment from "react-moment";
 
-library.add(faHeadphones, faArrowAltCircleLeft );
+library.add(faHeadphones, faArrowAltCircleLeft, faPauseCircle, faPlayCircle, faStopCircle);
+const synth = window.speechSynthesis;
 
-function clickToSpeak(item, singleArticle) {
-  speak(`${item.title} ${item.summary} ${singleArticle.content}`);
-}
+const PlayButton = ({ item, singleArticle, toggleSpeaking }) => (
+  <button
+    className="play"
+    onClick={() => {
+      const title = item.title;
+      const summary = item.summary;
+      const content = singleArticle.content;
+      speak(`${title} ${summary} ${content}`);
 
-const OneArticle = props => (
-  <>
-    <div className="navArticle">
-      <button className="backButton" onClick={props.handleBackClick}>
-      <FontAwesomeIcon
-          icon={faArrowAltCircleLeft}
-        />
-      </button>
-      <button className="play"  onClick={() => clickToSpeak(props.item, props.singleArticle)}>
-        <FontAwesomeIcon
-          icon={faHeadphones}
-        />
-      </button>
-      <div className="iconShare">
-        <Share item={props.item} />
-      </div>
-      <a className="viewOriginal" href={props.item.link} rel="noreferrer noopener" target="_blank">
-      View Original
-      </a>
-    </div>
-    <div className="article">
-      <h3 className="title">{props.item.title}</h3>
-      <p className="summary">{props.item.summary}</p>
-      <div>
-        <p className="articleDate">
-        <Moment format="D MMM YYYY" withTitle>
-          {props.item.pubdate}
-        </Moment>
-        </p>
-      </div>
-      <p className="content">{props.singleArticle.content}</p>
-    </div>
-  </>
+      toggleSpeaking();
+    }}
+  >
+    <FontAwesomeIcon icon={faHeadphones} />
+  </button>
 );
+
+const ResumeButton = ({ toggleSpeaking }) => (
+  <button
+    className="play"
+    onClick={() => {
+      synth.resume();
+      toggleSpeaking();
+    }}
+  >
+    <FontAwesomeIcon icon={faPlayCircle} />
+  </button>
+);
+
+class OneArticle extends Component {
+  constructor() {
+    super();
+    this.state = {
+      firstTime: true,
+      isSpeaking: false
+    };
+
+    this.toggleSpeaking = this.toggleSpeaking.bind(this);
+  }
+
+  toggleSpeaking() {
+    this.setState({ isSpeaking: !this.state.isSpeaking });
+  }
+
+  render() {
+    return (
+      <>
+        <div className="navArticle">
+          <button className="backButton" onClick={this.props.handleBackClick}>
+            <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+          </button>
+
+          <>
+            {this.state.isSpeaking ? (
+              <button
+                className="play"
+                onClick={() => {
+                  synth.pause();
+                  this.toggleSpeaking();
+                  this.setState({ firstTime: false });
+                }}
+              >
+                <FontAwesomeIcon icon={faPauseCircle} />
+              </button>
+            ) : (
+              <>
+                {this.state.firstTime ? (
+                  <PlayButton
+                    item={this.props.item}
+                    singleArticle={this.props.singleArticle}
+                    toggleSpeaking={this.toggleSpeaking}
+                  />
+                ) : (
+                  <ResumeButton toggleSpeaking={this.toggleSpeaking} />
+                )}
+              </>
+            )}
+          </>
+
+          <div className="iconShare">
+            <Share item={this.props.item} />
+          </div>
+          <a
+            className="viewOriginal"
+            href={this.props.item.link}
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            View Original
+          </a>
+        </div>
+        <div className="article">
+          <h3 className="title">{this.props.item.title}</h3>
+          <p className="summary">{this.props.item.summary}</p>
+          <div>
+            <p className="articleDate">
+              <Moment format="D MMM YYYY" withTitle>
+                {this.props.item.pubdate}
+              </Moment>
+            </p>
+          </div>
+          <p className="content">{this.props.singleArticle.content}</p>
+        </div>
+      </>
+    );
+  }
+}
 
 export default OneArticle;

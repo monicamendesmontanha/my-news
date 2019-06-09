@@ -1,6 +1,6 @@
-Project #1: My News
+# Project #1: My News
 
-Mobile project using **React**, **Node.js** and **Express**.
+Mobile project using **React**, **Node.js** and **Express**.  </br>
 [Link to live site]() Project 3: "My News"
 
 ---
@@ -9,7 +9,11 @@ Mobile project using **React**, **Node.js** and **Express**.
 Features:
 - Listen and read the news around the world in an accessible way
 - Play, Pause, Resume and Stop any time the speaking content.
+- Read without distractions, the content is showed without advertising.
+- Click and go to the original article page.
+- Share the news with your friends.
 - Mobile friendly (responsive)
+
 
 
 ### All Articles
@@ -17,6 +21,9 @@ Features:
 
 ### Read more one article
 <img width="1440" alt="Screen Shot 2019-06-09 at 14 40 41" src="https://user-images.githubusercontent.com/33978352/59155171-12337d00-8ac7-11e9-901d-6d58ade46db5.png">
+
+### Iphone view
+<img width="417" alt="Screen Shot 2019-06-09 at 14 39 06" src="https://user-images.githubusercontent.com/33978352/59155298-7a835e00-8ac9-11e9-98e1-272638206b78.png">
 
 
 ### Running locally

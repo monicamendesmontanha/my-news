@@ -27,14 +27,14 @@ const feeds = [
     url: "https://www.economist.com/finance-and-economics/rss.xml"
   },
   {
-    id: "BBC News - Technology",
-    selector: '[class="story-body__inner"]',
-    url: "http://feeds.bbci.co.uk/news/technology/rss.xml"
-  },
-  {
     id: "New York Times",
     selector: 'section[name="articleBody"]',
     url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+  },
+  {
+    id: "BBC News",
+    selector: '[class="story-body__inner"]',
+    url: "http://feeds.bbci.co.uk/news/world/rss.xml"
   }
 ];
 

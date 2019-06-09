@@ -19,15 +19,13 @@ function clickToSpeak(item, singleArticle) {
 const OneArticle = props => (
   <>
     <div className="navArticle">
-      <button className="backButton">
+      <button className="backButton" onClick={props.handleBackClick}>
       <FontAwesomeIcon
-          onClick={props.handleBackClick}
           icon={faArrowAltCircleLeft}
         />
       </button>
-      <button className="play">
+      <button className="play"  onClick={() => clickToSpeak(props.item, props.singleArticle)}>
         <FontAwesomeIcon
-          onClick={() => clickToSpeak(props.item, props.singleArticle)}
           icon={faHeadphones}
         />
       </button>

@@ -17,9 +17,9 @@ const FeedItem = props => (
   <div>
     <li key={props.item.guid} className="item">
       <div className="speak">
-        <button>
+        <button
+            onClick={() => clickToSpeak(props.item)}>
           <FontAwesomeIcon
-            onClick={() => clickToSpeak(props.item)}
             icon={faHeadphones}
           />
         </button>
@@ -30,7 +30,12 @@ const FeedItem = props => (
         </a>
       </div>
       <div>
-        <h3
+        <h3 tabIndex="0"
+          onKeyDown={(e) => {
+            if (e.keyCode === 13) {
+              props.handleReadMoreClick(props.item, props.feedId)
+            }
+          }}
           onClick={() => {
             props.handleReadMoreClick(props.item, props.feedId);
           }}

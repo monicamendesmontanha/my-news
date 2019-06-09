@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import AllArticles from "./AllArticles";
-import speak from "./speak";
 import Menu from "./Menu";
 import "./App.scss";
 import "./Menu.scss";
@@ -27,8 +26,6 @@ class App extends Component {
       .then(response => response.json())
       .then(articles => self.setState({ articles }))
       .catch(error => console.log("parsing failed", error));
-
-    speak("Content loaded!");
   }
 
   handleReadMoreClick(item, feedId) {

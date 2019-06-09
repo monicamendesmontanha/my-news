@@ -8,7 +8,7 @@ import {
   faStopCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import speak from "./speak";
+import getSpeakUtterance from "./getSpeakUtterance";
 import "./OneArticle.scss";
 import Share from "./Share";
 import Moment from "react-moment";
@@ -29,7 +29,8 @@ const PlayButton = ({ item, singleArticle, toggleSpeaking }) => (
       const title = item.title;
       const summary = item.summary;
       const content = singleArticle.content;
-      speak(`${title} ${summary} ${content}`);
+      const utterance = getSpeakUtterance(`${title} ${summary} ${content}`);
+      synth.speak(utterance);
 
       toggleSpeaking();
     }}

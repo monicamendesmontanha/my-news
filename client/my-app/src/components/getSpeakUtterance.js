@@ -1,10 +1,11 @@
 const synth = window.speechSynthesis;
 
-const speak = text => {
+const getSpeakUtterance = text => {
   if (synth.speaking) {
     console.error("speechSynthesis.speaking");
     return;
   }
+
   if (text !== "") {
     var utterThis = new SpeechSynthesisUtterance(text);
     utterThis.onend = function(event) {
@@ -18,8 +19,9 @@ const speak = text => {
     console.log(utterThis.voice)
     utterThis.pitch = "1";
     utterThis.rate = "1";
-    synth.speak(utterThis);
+
+    return utterThis;
   }
 };
 
-export default speak;
+export default getSpeakUtterance;

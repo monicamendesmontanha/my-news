@@ -14,7 +14,7 @@ const synth = window.speechSynthesis;
 const FeedItem = props => (
   <div>
     <li key={props.item.guid} className="item">
-      <div className="speak">
+      <div className="speakButton">
         <button
           onClick={() => {
             const item = props.item;

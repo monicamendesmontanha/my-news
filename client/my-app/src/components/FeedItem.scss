@@ -28,21 +28,22 @@ h3 {
   color: $light-grey;
 }
 
-.speak {
+.speakButton {
   position: absolute;
   z-index: 1;
   margin-top: 5px;
   margin-left: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
   button {
     border: 2px solid $dark-grey;
     border-radius: 4px;
     font-size: 22px;
     cursor: pointer;
+    padding: 1px 7px 2px 7px;
     color: $dark-grey;
     background-color: $light-grey;
-    // background-color: #1EAAFC;
-    // background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
   }
 }
 
@@ -59,10 +60,7 @@ h3 {
     font-size: 20px;
     color: $dark-grey;
     padding: 1px 7px 2px 7px;
-    // background-color: $white;
     background-color: $light-grey;
-    // background-color: #1EAAFC;
-    // background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
   }
 }
 
@@ -83,3 +81,15 @@ h3 {
   border-top: 2px solid $light-grey;
   background-color:$white;
 }
+
+
+/*Reset Safari User Agent Styles*/
+* {-webkit-margin-before: 0px;}
+* {-webkit-margin-end: 0px; }
+* {-webkit-margin-after: 0px;}
+* {-webkit-margin-start: 0px;}
+
+* {-webkit-padding-before: 0px;}
+* {-webkit-padding-end: 0px;}
+* {-webkit-padding-after: 0px;}
+* {-webkit-padding-start: 0px;}

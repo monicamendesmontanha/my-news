@@ -5,7 +5,7 @@ import "./App.scss";
 import "./Menu.scss";
 import OneArticle from './OneArticle';
 
-const BACKEND = "https://blooming-coast-36257.herokuapp.com";
+const BACKEND = process.env.REACT_APP_MY_NEWS_API || "http://localhost:8000";
 
 class App extends Component {
   constructor() {

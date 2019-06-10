@@ -5,6 +5,8 @@ import "./App.scss";
 import "./Menu.scss";
 import OneArticle from './OneArticle';
 
+const BACKEND = "https://blooming-coast-36257.herokuapp.com";
+
 class App extends Component {
   constructor() {
     super();
@@ -22,7 +24,7 @@ class App extends Component {
   async componentDidMount() {
     const self = this;
 
-    fetch("http://localhost:8000/feed")
+    fetch(`${BACKEND}/feed`)
       .then(response => response.json())
       .then(articles => self.setState({ articles }))
       .catch(error => console.log("parsing failed", error));
@@ -32,7 +34,7 @@ class App extends Component {
     const self = this;
     const url = item.link;
 
-    fetch(`http://localhost:8000/feed/article/?url=${url}&feedId=${feedId}`)
+    fetch(`${BACKEND}/feed/article/?url=${url}&feedId=${feedId}`)
       .then(response => response.json())
       .then(singleArticle => {
         self.setState({

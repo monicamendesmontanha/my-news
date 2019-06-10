@@ -86,7 +86,7 @@
 //mobile
 @include mediaSm {
   .article {
-    border: 2px dashed $white;
+    border: 2px dashed $dark-grey;
   }
   .title {
     font-size: 25px;
@@ -109,7 +109,7 @@
 
 @include mediaMd {
   .article {
-    border: 3px dashed $white;
+    border: 3px dashed $dark-grey;
   }
   .title  {
     font-size: 30px;

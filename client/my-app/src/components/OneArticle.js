@@ -20,6 +20,7 @@ library.add(
   faPlayCircle,
   faStopCircle
 );
+
 const synth = window.speechSynthesis;
 
 const PlayButton = ({ item, singleArticle, toggleSpeaking }) => (
@@ -64,6 +65,10 @@ class OneArticle extends Component {
 
   toggleSpeaking() {
     this.setState({ isSpeaking: !this.state.isSpeaking });
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   render() {

@@ -22,20 +22,40 @@ app.use(cors());
 
 const feeds = [
   {
-    id: "The Economist",
-    selector: '.blog-post__text',
-    url: "https://www.economist.com/finance-and-economics/rss.xml"
+    id: "BBC News - World",
+    selector: '[class="story-body__inner"]',
+    url: "http://feeds.bbci.co.uk/news/world/rss.xml"
   },
   {
-    id: "New York Times",
+    id: "The Economist - Business",
+    selector: '.blog-post__text',
+    url: "https://www.economist.com/business/rss.xml"
+  },
+  {
+    id: "New York Times - World",
     selector: 'section[name="articleBody"]',
     url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
   },
   {
-    id: "BBC News",
+    id: "BBC News - Entertainment and Arts",
     selector: '[class="story-body__inner"]',
-    url: "http://feeds.bbci.co.uk/news/world/rss.xml"
-  }
+    url: "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"
+  },
+  {
+    id: "SBS - Top Stories",
+    selector: '.text-body',
+    url: "https://www.sbs.com.au/news/feed"
+  },
+  {
+    id: "The Economist - Finance and Economics",
+    selector: '.blog-post__text',
+    url: "https://www.economist.com/finance-and-economics/rss.xml"
+  },
+  {
+    id: "BBC News - Science and Environment",
+    selector: '[class="story-body__inner"]',
+    url: "http://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
+  },
 ];
 
 app.get("/feed", (req, res) => {

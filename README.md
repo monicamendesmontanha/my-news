@@ -1,7 +1,7 @@
 # Project #3: My News
 
 Mobile project using **React**, **Node.js** and **Express**.  </br>
-<a href="http://bit.ly/mmm-my-news" target="_blank">Project 3: "My News"</a>
+[Project 3: "My News"](http://bit.ly/mmm-my-news){:target="_blank"}
 
 ---
 **My News App** was built to be accessible to everyone and aggregate internet content into one convenient place, making it possible for you to quickly scan headlines and full stories at a glance from a variety of different providers.

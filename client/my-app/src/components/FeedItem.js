@@ -1,13 +1,13 @@
 import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHeadphones, faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import { faHeadphones, faNewspaper, faStopCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import getSpeakUtterance from "./getSpeakUtterance";
 import "./FeedItem.scss";
 import Share from "./Share";
 import Moment from "react-moment";
 
-library.add(faHeadphones, faNewspaper);
+library.add(faHeadphones, faNewspaper, faStopCircle);
 
 const synth = window.speechSynthesis;
 
@@ -19,7 +19,9 @@ const FeedItem = props => (
           onClick={() => {
             const item = props.item;
             const utterance = getSpeakUtterance(`${item.title} ${item.summary}`);
-            synth.speak(utterance);
+            if (utterance) {
+              synth.speak(utterance);
+            }
           }}
         >
           <FontAwesomeIcon icon={faHeadphones} />

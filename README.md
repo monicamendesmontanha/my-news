@@ -17,7 +17,8 @@ Features:
 
 
 ### Usage
-![regift](https://user-images.githubusercontent.com/33978352/59177972-04522a80-8ba1-11e9-9588-9de102f621d0.gif)
+![regift](https://user-images.githubusercontent.com/33978352/59236546-0916ed00-8c3a-11e9-9ef8-607e8b00ad62.gif)
+
 
 ### All Articles
 <img width="1440" alt="Screen Shot 2019-06-09 at 14 40 14" src="https://user-images.githubusercontent.com/33978352/59155169-0b0c6f00-8ac7-11e9-9c4b-c78b9f4af01c.png">

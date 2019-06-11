@@ -2,7 +2,8 @@
 
 Mobile project using **React**, **Node.js** and **Express**.  </br>
 
-<a href="http://bit.ly/mmm-my-news" target="_blank">Project 3: "My News"</a>
+<a href="http://bit.ly/mmm-my-news" target="_blank">Project 3: "My News"</a> </br>
+![android-icon-96x96](https://user-images.githubusercontent.com/33978352/59238568-00c2b000-8c42-11e9-9376-a51b7745d2bf.png)
 
 ---
 **My News App** was built to be accessible to everyone and aggregate internet content into one convenient place, making it possible for you to quickly scan headlines and full stories at a glance from a variety of different providers.

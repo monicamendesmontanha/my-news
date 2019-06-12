@@ -18,7 +18,8 @@ Features:
 
 
 ### Usage
-![regift](https://user-images.githubusercontent.com/33978352/59236546-0916ed00-8c3a-11e9-9ef8-607e8b00ad62.gif)
+![ezgif com-crop](https://user-images.githubusercontent.com/33978352/59323248-3e483b80-8d1d-11e9-9ea2-b45bdb48dd7a.gif)
+
 
 
 ### All Articles
